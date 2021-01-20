@@ -1,2 +1,7 @@
 env/
-output.xml
+*.xml
+*.exe
+*.spec
+build/
+dist/
+__pycache__/

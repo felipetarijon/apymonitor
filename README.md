@@ -27,6 +27,7 @@ To do:
 * [ ] Add more arguments/options to:  
     * [x] allow change xml output filename  
     * [ ] generate the xml without the extra_header (non-default option)  
+    * [ ] blacklist some api function or dll
   
 Changelog:  
 * 01/19/2021:  

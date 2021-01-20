@@ -5,7 +5,22 @@ Firstly, this project aims to generate a valid XML document to be used on APIMon
   
 Later, new features can be included on demand. I thought implement something to read the api monitor output file and interpret the informations. Maybe run yara rules or another tools such as suricata.  
   
-TODO:    
+Clone and getting ready:
+```code:bash
+git clone git@github.com:felipetarijon/apymonitor.git
+python3.6 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+python apymonitor.py
+```
+  
+Build:
+```code:bash
+pyinstaller apymonitor.py
+./dist/apymonitor/apymonitor -h
+```
+  
+To do:  
 * [ ] Replace the XML lib (xml.dom.minidom) to another more secure  
 * [x] Implement argparse  
 * [x] Build an EXE file to be used on Windows as a tool  

@@ -22,6 +22,40 @@ xml_header = """<?xml version="1.0"?>
 	-->\n""".format(extra_header)
 
 
+def get_pe_imports(pe_file_path: str):
+    pe = pefile.PE(pe_file_path)
+    imports = {}
+    for entry in pe.DIRECTORY_ENTRY_IMPORT:
+        imports[entry.dll.decode()] = [imp.name.decode() for imp in entry.imports]
+    return imports
+
+
+def get_pe_api_filters(pe_file_path: str):
+    pe_imports = get_pe_imports(pe_file_path)
+
+    doc = minidom.Document()
+
+    root = doc.createElement('ApiMonitor')
+    doc.appendChild(root)
+
+    capture_filter = doc.createElement('CaptureFilter')
+    root.appendChild(capture_filter)
+
+    for dll in pe_imports:
+        module = doc.createElement('Module')
+        module.setAttribute('Name', dll)
+
+        capture_filter.appendChild(module)
+        
+        for api_func in pe_imports[dll]:
+            api = doc.createElement('Api')
+            api.setAttribute('Name', api_func)
+
+            module.appendChild(api)
+
+    return root.toprettyxml()
+
+
 if __name__ == '__main__':
     log_format = '[%(levelname)s] %(message)s'
     logger = logging.getLogger()
@@ -40,33 +74,13 @@ if __name__ == '__main__':
     parser.add_argument("-s", "--silent", help="Do not output into stdout", action="store_true")
 
     args = parser.parse_args()
-        
-    pe = pefile.PE(args.input)
 
-    doc = minidom.Document()
-
-    root = doc.createElement('ApiMonitor')
-    doc.appendChild(root)
-
-    capture_filter = doc.createElement('CaptureFilter')
-    root.appendChild(capture_filter)
-
-    for entry in pe.DIRECTORY_ENTRY_IMPORT:
-        module = doc.createElement('Module')
-        module.setAttribute('Name', entry.dll.decode())
-
-        capture_filter.appendChild(module)
-        
-        for imp in entry.imports:
-            api = doc.createElement('Api')
-            api.setAttribute('Name', imp.name.decode())
-
-            module.appendChild(api)
+    pe_filters = get_pe_api_filters(args.input)
 
     if args.output:
         with open(args.output, "w+") as output_file:
-            output_file.write(xml_header + root.toprettyxml())
+            output_file.write(xml_header + pe_filters)
             output_file.close()
     
     if not args.silent:
-        print(root.toprettyxml())
+        print(pe_filters)

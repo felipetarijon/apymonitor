@@ -33,21 +33,38 @@ More info: github.com/felipetarijon/apymonitor
     </CaptureFilter>
 </ApiMonitor>
 ```
+  
+You can also [get](https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar) the x64 apymonitor Windows build on `apymonitor-winx64.rar`. Usage:
+```code:bash
+apymonitor\apymonitor.exe -h
+```
+  
 
 ## Cloning and getting ready
+  
+### Linux
 ```code:bash
 git clone git@github.com:felipetarijon/apymonitor.git
 python3.6 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
-python apymonitor.py
+```
+  
+### Windows
+Requirements: Git and Python.
+```code:bash
+git clone https://github.com/felipetarijon/apymonitor.git
+cd apymonitor
+python -m venv env
+env\Scriipts\activate
+pip install -r requirements.txt
 ```
   
 ## Build
 ```code:bash
 pyinstaller apymonitor.py
-./dist/apymonitor/apymonitor -h
 ```
+It will build on `/dist/apymonitor/`
   
 ## To do
 * [ ] Replace the XML lib (xml.dom.minidom) by another more secure  
@@ -62,6 +79,7 @@ pyinstaller apymonitor.py
 * 03/13/2021:  
     * Fixed the argparse to show help message when user provide no args.
     * Added the option to not output the extra_header.
+    * Built the project on Windows x64 to generate the tool to be ready to use.
 * 01/19/2021:  
     * Added pyinstaller package to build executable files.  
     * Implemented argparse.

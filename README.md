@@ -2,13 +2,13 @@
 **Started**: 01/18/2021
   
 ## What is this?
-Apymonitor is a python tool to create an APIMonitor xml filter output file based on a PE import list, ready to use to analyze an artifact.
+Apymonitor is a python tool to create an [APIMonitor](http://www.rohitab.com/apimonitor){:target="_blank"} xml filter output file based on a PE import list, ready to use to analyze an artifact.
   
 ## Usage
 ```code:bash
 python apymonitor.py -i malware.exe -o output.xml
 ```
-It will output into the file something like this:  
+It will output into the file `output.xml` something like this:  
 ```code:xml
 <?xml version="1.0"?>
 <!--

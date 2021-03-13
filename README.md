@@ -1,6 +1,3 @@
-**Author**: Felipe Tarijon  
-**Started**: 01/18/2021
-  
 ## What is this?
 Apymonitor is a python tool to create an [APIMonitor](http://www.rohitab.com/apimonitor) xml filter output file based on a PE import list, ready to use to analyze an artifact.
   
@@ -62,9 +59,12 @@ pyinstaller apymonitor.py
     * [ ] blacklist some api function or dll
   
 ## Changelog:  
-* 01/19/2021:  
-    * Added pyinstaller package to build executable files.  
-    * Implemented argparse.
 * 03/13/2021:  
     * Fixed the argparse to show help message when user provide no args.
     * Added the option to not output the extra_header.
+* 01/19/2021:  
+    * Added pyinstaller package to build executable files.  
+    * Implemented argparse.
+* 01/18/2021:  
+    * Initial commit.
+    * Implemented the basic functionality to extract the apis from the PE.

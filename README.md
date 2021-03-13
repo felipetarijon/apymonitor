@@ -35,7 +35,12 @@ More info: github.com/felipetarijon/apymonitor
 ```
   
 You can also [get](https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar) the x64 apymonitor Windows build on `apymonitor-winx64.rar`.  
-Usage example:  
+Downloading using **powershell**:  
+```code:ps1
+powershell.exe -c "wget https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar -OutFile apymonitor.rar"
+```
+  
+After extracting, usage example:  
 ```code:bash
 apymonitor\apymonitor.exe -i C:\Windows\System32\calc.exe -o calc.xml
 ```

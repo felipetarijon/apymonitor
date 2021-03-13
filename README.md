@@ -2,7 +2,7 @@
 **Started**: 01/18/2021
   
 ## What is this?
-Apymonitor is a python tool to create an <a href="http://www.rohitab.com/apimonitor" target="_blank">APIMonitor<\a> xml filter output file based on a PE import list, ready to use to analyze an artifact.
+Apymonitor is a python tool to create an <a href="http://www.rohitab.com/apimonitor" target="_blank">APIMonitor</a> xml filter output file based on a PE import list, ready to use to analyze an artifact.
   
 ## Usage
 ```code:bash

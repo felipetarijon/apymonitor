@@ -2,7 +2,7 @@
 Apymonitor is a python tool to create an [APIMonitor](http://www.rohitab.com/apimonitor) xml filter output file based on a PE import list, ready to use to analyze an artifact.
   
 ## Usage
-```code:bash
+```xml
 python apymonitor.py -i malware.exe -o output.xml
 ```
 It will output into the file `output.xml` something like this:  
@@ -19,22 +19,22 @@ A python project which generates a valid APIMonitor XML document with a PE as in
 More info: github.com/felipetarijon/apymonitor
 -->
 <ApiMonitor>
-	<CaptureFilter>
-		<Module Name="KERNEL32.dll">
-			<Api Name="VirtualAlloc"/>
-			<Api Name="VirtualFree"/>
-			<Api Name="CreateFileA"/>
-			<Api Name="GetFileSize"/>
-			<Api Name="ReadFile"/>
-			<Api Name="WriteFile"/>
-			<Api Name="CloseHandle"/>
-			<Api Name="MapViewOfFile"/>
+    <CaptureFilter>
+        <Module Name="KERNEL32.dll">
+            <Api Name="VirtualAlloc"/>
+            <Api Name="VirtualFree"/>
+            <Api Name="CreateFileA"/>
+            <Api Name="GetFileSize"/>
+            <Api Name="ReadFile"/>
+            <Api Name="WriteFile"/>
+            <Api Name="CloseHandle"/>
+            <Api Name="MapViewOfFile"/>
         </Module>
-	</CaptureFilter>
+    </CaptureFilter>
 </ApiMonitor>
 ```
 
-## Cloning and getting ready:
+## Cloning and getting ready
 ```code:bash
 git clone git@github.com:felipetarijon/apymonitor.git
 python3.6 -m venv env
@@ -43,22 +43,22 @@ pip install -r requirements.txt
 python apymonitor.py
 ```
   
-## Build:
+## Build
 ```code:bash
 pyinstaller apymonitor.py
 ./dist/apymonitor/apymonitor -h
 ```
   
-## To do:  
+## To do
 * [ ] Replace the XML lib (xml.dom.minidom) by another more secure  
 * [x] Implement argparse  
 * [x] Build an executable file to be used as a tool  
-* [ ] Add more arguments/options to:  
+* Add more arguments/options to:  
     * [x] allow change xml output filename  
     * [x] generate the xml without the extra_header (non-default option)  
     * [ ] blacklist some api function or dll
   
-## Changelog:  
+## Changelog
 * 03/13/2021:  
     * Fixed the argparse to show help message when user provide no args.
     * Added the option to not output the extra_header.

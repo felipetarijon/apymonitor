@@ -34,9 +34,10 @@ More info: github.com/felipetarijon/apymonitor
 </ApiMonitor>
 ```
   
-You can also [get](https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar) the x64 apymonitor Windows build on `apymonitor-winx64.rar`. Usage:
+You can also [get](https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar) the x64 apymonitor Windows build on `apymonitor-winx64.rar`.  
+Usage example:  
 ```code:bash
-apymonitor\apymonitor.exe -h
+apymonitor\apymonitor.exe -i C:\Windows\System32\calc.exe -o calc.xml
 ```
   
 

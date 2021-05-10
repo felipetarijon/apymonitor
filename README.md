@@ -34,7 +34,7 @@ More info: github.com/felipetarijon/apymonitor
 </ApiMonitor>
 ```
   
-You can also [get](https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar) the x64 apymonitor Windows build on `apymonitor-winx64.rar`.  
+You can also [get](https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar) the x64 apymonitor **Windows** build on `apymonitor-winx64.rar`.  
 Downloading using **powershell**:  
 ```code:ps1
 powershell.exe -c "wget https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar -OutFile apymonitor.rar"
@@ -62,7 +62,7 @@ Requirements: Git and Python.
 git clone https://github.com/felipetarijon/apymonitor.git
 cd apymonitor
 python -m venv env
-env\Scriipts\activate
+env\Scripts\activate
 pip install -r requirements.txt
 ```
   
@@ -70,7 +70,7 @@ pip install -r requirements.txt
 ```code:bash
 pyinstaller apymonitor.py
 ```
-It will build on `/dist/apymonitor/`
+It will build on `dist/apymonitor/`
   
 ## To do
 * [ ] Replace the XML lib (xml.dom.minidom) by another more secure  
@@ -80,6 +80,7 @@ It will build on `/dist/apymonitor/`
     * [x] allow change xml output filename  
     * [x] generate the xml without the extra_header (non-default option)  
     * [ ] blacklist some api function or dll
+* [ ] Implement a feature to get the dynamic imported api functions using capstone
   
 ## Changelog
 * 03/13/2021:  

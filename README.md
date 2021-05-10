@@ -2,7 +2,7 @@
 Apymonitor is a python tool to create an [APIMonitor](http://www.rohitab.com/apimonitor) xml filter output file based on a PE import list, ready to use to analyze an artifact.
   
 ## Usage
-```xml
+```bash
 python apymonitor.py -i malware.exe -o output.xml
 ```
 It will output into the file `output.xml` something like this:  
@@ -36,12 +36,12 @@ More info: github.com/felipetarijon/apymonitor
   
 You can also [get](https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar) the x64 apymonitor **Windows** build on `apymonitor-winx64.rar`.  
 Downloading using **powershell**:  
-```code:ps1
+```ps1
 powershell.exe -c "wget https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar -OutFile apymonitor.rar"
 ```
   
 After extracting, usage example:  
-```code:bash
+```bash
 apymonitor\apymonitor.exe -i C:\Windows\System32\calc.exe -o calc.xml
 ```
   
@@ -49,7 +49,7 @@ apymonitor\apymonitor.exe -i C:\Windows\System32\calc.exe -o calc.xml
 ## Cloning and getting ready
   
 ### Linux
-```code:bash
+```bash
 git clone git@github.com:felipetarijon/apymonitor.git
 python3.6 -m venv env
 source env/bin/activate
@@ -58,7 +58,7 @@ pip install -r requirements.txt
   
 ### Windows
 Requirements: Git and Python.
-```code:bash
+```bash
 git clone https://github.com/felipetarijon/apymonitor.git
 cd apymonitor
 python -m venv env
@@ -67,7 +67,7 @@ pip install -r requirements.txt
 ```
   
 ## Build
-```code:bash
+```bash
 pyinstaller apymonitor.py
 ```
 It will build on `dist/apymonitor/`

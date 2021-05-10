@@ -6,7 +6,7 @@ Apymonitor is a python tool to create an [APIMonitor](http://www.rohitab.com/api
 python apymonitor.py -i malware.exe -o output.xml
 ```
 It will output into the file `output.xml` something like this:  
-```code:xml
+```xml
 <?xml version="1.0"?>
 <!--
 API Monitor Filter

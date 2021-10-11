@@ -1,6 +1,6 @@
 ## What is this?
 Apymonitor is a python tool to create an [APIMonitor](http://www.rohitab.com/apimonitor)
-xml filter output file based on a PE import list, ready to use to analyze an 
+xml filter output file based on a PE import list (static imports), ready to use to analyze an 
 artifact.
   
 ## Usage
@@ -36,6 +36,9 @@ More info: github.com/felipetarijon/apymonitor
     </CaptureFilter>
 </ApiMonitor>
 ```
+
+Then load the XML file on APIMonitor:  
+![Loading filter on APIMonitor](docs/load-filter.png)
   
 You can also [get](https://raw.githubusercontent.com/felipetarijon/apymonitor/main/apymonitor-winx64.rar) 
 the x64 apymonitor **Windows** build on `apymonitor-winx64.rar`.  
